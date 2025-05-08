@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <!-- CDN TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Page Wrapper -->
+    <div class="flex flex-col h-screen">        
+
+        <!-- Header (Navbar) -->
+        <div class="bg-white shadow-md flex justify-between items-center p-4">
+            <img src="path/to/your/logo.png" alt="Logo PIGIC" class="h-10">
+            
+            <!-- Navbar à droite -->
+            <div class="flex items-center ">
+
+                <!-- Dropdown "Créer" -->
+                <div class="relative">
+                    <button class="flex items-center  py-2 px-4 text-stone-950  rounded-lg">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Créer</span>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Bien</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Locataire</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Contrat</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Contact</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Evénément</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Document </a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Message</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouvelle Dépense </a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nouveau Révenu </a>
+                    </div>
+                </div>
+
+                <!-- Bouton Agenda -->
+                <button class="flex items-center py-2 px-4 text-stone-950 rounded-lg">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="ml-2">Agenda</span>
+                </button>
+
+                <!-- Notifications -->
+                <button class="relative flex items-center py-2 px-4 text-stone-950   rounded-lg">
+                    <i class="fas fa-bell"></i>
+                    <span class="absolute top-0 right-0 bg-red-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </button>
+
+                <!-- Point d'interrogation pour Aide -->
+                <div class="relative">
+                    <button class="flex items-center py-2 px-4 text-stone-950  rounded-lg">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="ml-2">Aide</span>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Assistant IA</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Centre d'Aide</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Chat d'Assistance</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nous Contactez</a>
+                    </div>
+                </div>
+
+                <!-- Bouton Compte -->
+                <div class="relative">
+                    <button class="flex items-center py-2 px-4 text-stone-950  rounded-lg">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="ml-2">Compte</span>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Nom Complet</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Email</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Abonnement/Facturation</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Parainages</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Paramètres</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Déconnexion</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Page Content Wrapper -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <div class="w-64 bg-gradient-to-r from-blue-500 to-blue-700 text-white p-5">
+                <!-- Sidebar Menu -->
+                <nav>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 py-2 px-4 hover:bg-blue-800 rounded-lg">
+                                <i class="fas fa-tachometer-alt"></i> 
+                                <span>Tableau de bord</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 py-2 px-4 hover:bg-blue-800 rounded-lg">
+                                <i class="fas fa-home"></i>
+                                <span>Biens</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 py-2 px-4 hover:bg-blue-800 rounded-lg">
+                                <i class="fas fa-users"></i>
+                                <span>Locataires</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 py-2 px-4 hover:bg-blue-800 rounded-lg">
+                                <i class="fas fa-key"></i> 
+                                <span>Locations</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-1 p-6">
+                <!-- Content goes here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script pour afficher/cacher les dropdowns
+        document.querySelectorAll('.relative').forEach(item => {
+            item.addEventListener('click', () => {
+                const menu = item.querySelector('div');
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

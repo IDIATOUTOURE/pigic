@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+   <!-- Navbar Fixée -->
+   <nav class="bg-white bg-opacity-80 shadow-md fixed top-0 left-0 right-0 z-10 h-16">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold">
+            PIGIC
+        </a>
+
+        <!-- Menu centré -->
+        <div class="flex flex-grow justify-center space-x-6 relative" id="menu">
+            <div class="group relative">
+                <a href="#" class="text-gray-700 hover:text-blue-600">Menu</a>
+                <div class="absolute hidden group-hover:block bg-white shadow-md rounded mt-1 w-48">
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Marketplace</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Services</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Construction</a>
+                    <a href="{% url 'tarification'%}" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Tarification</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boutons -->
+        <div class="flex space-x-3">
+            <a href="{% url 'login' %}" class="text-gray-700 px-4 py-2 rounded border">Connexion</a>
+            <a href="{% url 'register' %}" class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-700">Inscription</a>
+        </div>
+    </div>
+</nav>
+
+  <!-- CONTENU -->
+  <main class="flex-grow pt-24">
+    <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Nos Offres de Tarification</h1>
+        <p class="text-gray-600 mt-2">Choisissez le plan qui correspond le mieux à vos besoins</p>
+      </div>
+    <!-- SWITCH -->
+    <div class="flex justify-center mt-8 mb-6">
+      <div class="bg-gray-300 p-1 rounded-full inline-flex">
+        <button id="monthlyBtn" class="px-6 py-2 rounded-full bg-lime-500 text-white">Mensuel</button>
+        <button id="annualBtn" class="px-6 py-2 rounded-full text-gray-700">Annuel</button>
+      </div>
+    </div>
+
+    <!-- PLANS ALIGNÉS EN LIGNE -->
+    <div class="flex flex-col lg:flex-row justify-center items-stretch gap-6 max-w-7xl mx-auto px-4 mb-16">
+
+      <!-- GRATUIT -->
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/3">
+        <h4 class="text-xl font-bold text-green-600">Gratuit</h4>
+        <div class="text-center my-4">
+          <span class="text-2xl font-bold text-green-600">0GNF</span>
+          <span class="text-gray-600">/ mois</span>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><i class="fas fa-check text-green-500"></i> 1 lot</li>
+          <li><i class="fas fa-check text-green-500"></i> Locataires illimités</li>
+          <li><i class="fas fa-check text-green-500"></i> 100 Mo de stockage</li>
+        </ul>
+        <button class="w-full bg-green-500 text-white py-2 rounded-lg mt-4 hover:bg-green-600">Souscrire</button>
+      </div>
+
+      <!-- SILVER -->
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/3">
+        <h4 class="text-xl font-bold text-blue-600">Mensuel</h4>
+        <div class="text-center my-4">
+          <div class="price-monthly">
+            <span class="text-2xl font-bold text-blue-600">400 GNF</span>
+            <span class="text-gray-600">/ mois</span>
+            <p class="text-sm text-gray-600">ou 49GNF/ an</p>
+          </div>
+          <div class="price-annual hidden">
+            <span class="text-2xl font-bold text-blue-600">49GNF</span>
+            <span class="text-gray-600">/ an</span>
+            <p class="text-sm text-gray-600">Équivalent à 4.08GNF/mois</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><i class="fas fa-check text-green-500"></i> 2 - 5 Lots</li>
+          <li><i class="fas fa-check text-green-500"></i> Locataires illimités</li>
+          <li><i class="fas fa-check text-green-500"></i> 500 Mo de stockage</li>
+        </ul>
+        <button class="w-full bg-blue-500 text-white py-2 rounded-lg mt-4 hover:bg-blue-600">Souscrire</button>
+      </div>
+
+      <!-- GOLD -->
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/3">
+        <h4 class="text-xl font-bold text-yellow-600">Annuel</h4>
+        <div class="text-center my-4">
+          <div class="price-monthly">
+            <span class="text-2xl font-bold text-yellow-600">9.90GNF</span>
+            <span class="text-gray-600">/ mois</span>
+            <p class="text-sm text-gray-600">ou 99GNF / an</p>
+          </div>
+          <div class="price-annual hidden">
+            <span class="text-2xl font-bold text-yellow-600">99GNF</span>
+            <span class="text-gray-600">/ an</span>
+            <p class="text-sm text-gray-600">Équivalent à 8.25GNF/mois</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><i class="fas fa-check text-green-500"></i> Jusqu’à 20 lots</li>
+          <li><i class="fas fa-check text-green-500"></i> Locataires illimités</li>
+          <li><i class="fas fa-check text-green-500"></i> 1 Go de stockage</li>
+        </ul>
+        <button class="w-full bg-yellow-500 text-white py-2 rounded-lg mt-4 hover:bg-yellow-600">Souscrire</button>
+      </div>
+    </div>
+  </main>
+
+ 
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center p-2 mt-20 w-full">
+        <p>&copy; 2025 PIGIC - Tous droits réservés</p>
+    </footer>
+
+  <!-- SCRIPT SWITCH -->
+  <script>
+    const btnMonthly = document.getElementById("monthlyBtn");
+    const btnAnnual = document.getElementById("annualBtn");
+    const pricesMonthly = document.querySelectorAll(".price-monthly");
+    const pricesAnnual = document.querySelectorAll(".price-annual");
+
+    btnMonthly.addEventListener("click", () => {
+      btnMonthly.classList.add("bg-lime-500");
+      btnAnnual.classList.remove("bg-lime-500");
+
+      pricesMonthly.forEach(el => el.classList.remove("hidden"));
+      pricesAnnual.forEach(el => el.classList.add("hidden"));
+    });
+
+    btnAnnual.addEventListener("click", () => {
+      btnAnnual.classList.add("bg-lime-500");
+      btnMonthly.classList.remove("bg-lime-500");
+
+      pricesMonthly.forEach(el => el.classList.add("hidden"));
+      pricesAnnual.forEach(el => el.classList.remove("hidden"));
+    });
+  </script>
+</body>
+</html>

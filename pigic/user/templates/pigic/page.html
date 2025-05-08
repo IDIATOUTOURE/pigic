@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil - PIGIC</title>
+    <!-- Lien vers Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-cover bg-center">
+    <!-- Navbar Fixée -->
+    <nav class="bg-white bg-opacity-80 shadow-md fixed top-0 left-0 right-0 z-10 h-16">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-bold">
+                PIGIC
+            </a>
+
+            <!-- Menu centré -->
+            <div class="flex flex-grow justify-center space-x-6 relative" id="menu">
+                <div class="group relative">
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Menu</a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md rounded mt-1 w-48">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Marketplace</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Services</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Construction</a>
+                        <a href="{% url 'tarification'%}" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Tarification</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons -->
+            <div class="flex space-x-3">
+                <a href="{% url 'login' %}" class="text-gray-700 px-4 py-2 rounded border">Connexion</a>
+                <a href="{% url 'register' %}" class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-700">Inscription</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="flex flex-col items-center justify-center text-center p-6 bg-cover bg-center bg-white/80 w-full h-[500px]" style="background-image: url({% static 'img/img10.jpg' %});">
+        <h1 class="text-3xl md:text-4xl font-bold">Simplifiez la gestion immobilier et chantier</h1>
+        <a href="{% url 'register' %}" class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-700">Inscription</a>
+
+       
+    </div>
+
+    <!-- Section d'annonces -->
+    <div class="text-center mt-24">
+        <h2 class="text-3xl font-bold">Comment ça marche ?</h2>
+        <p class="text-gray-600 mt-2">Simple comme 1,2,3</p>
+
+        <!-- Conteneur des cartes -->
+        <div class="flex flex-wrap justify-center gap-6 mt-6">
+            <!-- Carte 1 -->
+            <div class="bg-white shadow-lg rounded-lg p-6 max-w-xs text-center relative hover:scale-105 transition-transform duration-300">
+                <!-- Numéro 1 -->
+                <div class="absolute top-4 left-4 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-semibold text-xl shadow-lg">
+                    1
+                </div>
+                <img src="{% static 'img/home.png' %}" alt="Étape 1" class="mx-auto w-20 h-20 mt-6">
+                <h3 class="text-xl font-bold mt-4">Créez un Bien</h3>
+                <p class="text-gray-600 mt-2">Appartements, Maisons, Parkings...</p>
+                <h5 class="text-sm font-bold mt-4">Créer la fiche détaillée de votre local</h5>
+                <p class="text-gray-600 mt-2">(Appartements, Locataires, Parkings, Surface, Equipements).</p>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="bg-white shadow-lg rounded-lg p-6 max-w-xs text-center relative hover:scale-105 transition-transform duration-300">
+                <!-- Numéro 2 -->
+                <div class="absolute top-4 left-4 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-semibold text-xl shadow-lg">
+                    2
+                </div>
+                <img src="{% static 'img/locataire.png' %}" alt="Étape 2" class="mx-auto w-20 h-20 mt-6">
+                <h3 class="text-xl font-bold mt-4">Créer un Locataire</h3>
+                <p class="text-gray-600 mt-2">Locataire et Colocataire</p>
+                <h5 class="text-sm font-bold mt-4">Créer la fiche détaillée de votre Locataire</h5>
+                <p>(Nom, prénom, Adresse, téléphone...)</p>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="bg-white shadow-lg rounded-lg p-6 max-w-xs text-center relative hover:scale-105 transition-transform duration-300">
+                <!-- Numéro 3 -->
+                <div class="absolute top-4 left-4 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-semibold text-xl shadow-lg">
+                    3
+                </div>
+                <img src="{% static 'img/contrat.png' %}" alt="Étape 3" class="mx-auto w-20 h-20 mt-6">
+                <h3 class="text-xl font-bold mt-4">Établir un Contrat</h3>
+                <p class="text-gray-600 mt-2">Le contrat de location (Vente, liez votre local et votre Locataire à travers un contrat). <br> Indiquez la durée, le montant...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center p-2 mt-20 w-full">
+        <p>&copy; 2025 PIGIC - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                document.getElementById('menu-mobile').classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
